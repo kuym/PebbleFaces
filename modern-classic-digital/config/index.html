@@ -104,7 +104,7 @@
 	    <label class='item'>
 	      <input type='range' class='item-slider' name='minuteHandWidth_slider' value='50'>
 	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' name='minuteHandWidth' value='50'>
+	        <input type='text' class='item-input' name='minuteHandWidth_value' value='50'>
 	      </div>
 	    </label>
 	  </div>
@@ -116,7 +116,7 @@
 	    <label class='item'>
 	      <input type='range' class='item-slider' name='hourHandWidth_slider' value='50'>
 	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' name='hourHandWidth' value='50'>
+	        <input type='text' class='item-input' name='hourHandWidth_value' value='50'>
 	      </div>
 	    </label>
 	  </div>
@@ -181,17 +181,93 @@
   <script>
 	function getConfigData()
 	{
-		var backgroundColorPicker = document.getElementById('background_color_picker');
-		var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+		var elapsedOuterColor_picker = document.getElementById('elapsedOuterColor_picker');
+		var elapsedOuterBackground_picker = document.getElementById('elapsedOuterBackground_picker');
+		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
+		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
+		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
+		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
+		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
+		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
+		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
+		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
+		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
+		var background_color_picker = document.getElementById('background_color_picker');
+		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
+		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
+		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
+		var optionHourLeadingZeroSuppression_option = document.getElementById('optionHourLeadingZeroSuppression_option');
+		var option12HourTime_option = document.getElementById('option12HourTime_option');
+		var optionHourHandSnap_option = document.getElementById('optionHourHandSnap_option');
+		var optionDemoMode_option = document.getElementById('optionDemoMode_option');
+		var optionHideWeekday_option = document.getElementById('optionHideWeekday_option');
+		var optionHideMonth_option = document.getElementById('optionHideMonth_option');
+		var optionHideDate_option = document.getElementById('optionHideDate_option');
+		var optionHideBattery_option = document.getElementById('optionHideBattery_option');
+		var optionHideConnectionLost_option = document.getElementById('optionHideConnectionLost_option');
 
-		var options = {
-		'background_color': backgroundColorPicker.value,
-		'high_contrast': highContrastCheckbox.checked
+		var options =
+		{
+			'elapsedOuterColor_picker': elapsedOuterColor_picker.value,
+			'elapsedOuterBackground_picker': elapsedOuterBackground_picker.value,
+			'elapsedInnerColor_picker': elapsedInnerColor_picker.value,
+			'elapsedInnerBackground_picker': elapsedInnerBackground_picker.value,
+			'innermostBackgroundColor_picker': innermostBackgroundColor_picker.value,
+			'hourHandColor_picker': hourHandColor_picker.value,
+			'minuteHandColor_picker': minuteHandColor_picker.value,
+			'innermostBackgroundColor_picker': innermostBackgroundColor_picker.value,
+			'complicationMonthColor_picker': complicationMonthColor_picker.value,
+			'complicationDateColor_picker': complicationDateColor_picker.value,
+			'complicationDayColor_picker': complicationDayColor_picker.value,
+			'complicationBatteryColor_picker': complicationBatteryColor_picker.value,
+			'complicationBatteryErrorColor_picker': complicationBatteryErrorColor_picker.value,
+			'background_color_picker': background_color_picker.value,
+			'minuteHandWidth_value': minuteHandWidth_value.value,
+			'hourHandWidth_value': hourHandWidth_value.value,
+			'optionDateLeadingZeroSuppression_option': optionDateLeadingZeroSuppression_option.checked,
+			'optionHourLeadingZeroSuppression_option': optionHourLeadingZeroSuppression_option.checked,
+			'option12HourTime_option': option12HourTime_option.checked,
+			'optionHourHandSnap_option': optionHourHandSnap_option.checked,
+			'optionDemoMode_option': optionDemoMode_option.checked,
+			'optionHideWeekday_option': optionHideWeekday_option.checked,
+			'optionHideMonth_option': optionHideMonth_option.checked,
+			'optionHideDate_option': optionHideDate_option.checked,
+			'optionHideBattery_option': optionHideBattery_option.checked,
+			'optionHideConnectionLost_option': optionHideConnectionLost_option.checked,
 		};
 
 		// Save for next launch
 		localStorage['background_color'] = options['background_color'];
-		localStorage['high_contrast'] = options['high_contrast'];
+
+		localStorage['elapsedOuterColor_picker'] = options['elapsedOuterColor_picker'];
+		localStorage['elapsedOuterBackground_picker'] = options['elapsedOuterBackground_picker'];
+		localStorage['elapsedInnerColor_picker'] = options['elapsedInnerColor_picker'];
+		localStorage['elapsedInnerBackground_picker'] = options['elapsedInnerBackground_picker'];
+		localStorage['innermostBackgroundColor_picker'] = options['innermostBackgroundColor_picker'];
+		localStorage['hourHandColor_picker'] = options['hourHandColor_picker'];
+		localStorage['minuteHandColor_picker'] = options['minuteHandColor_picker'];
+		localStorage['innermostBackgroundColor_picker'] = options['innermostBackgroundColor_picker'];
+		localStorage['complicationMonthColor_picker'] = options['complicationMonthColor_picker'];
+		localStorage['complicationDateColor_picker'] = options['complicationDateColor_picker'];
+		localStorage['complicationDayColor_picker'] = options['complicationDayColor_picker'];
+		localStorage['complicationBatteryColor_picker'] = options['complicationBatteryColor_picker'];
+		localStorage['complicationBatteryErrorColor_picker'] = options['complicationBatteryErrorColor_picker'];
+		localStorage['background_color_picker'] = options['background_color_picker'];
+		localStorage['minuteHandWidth_value'] = options['minuteHandWidth_value'];
+		localStorage['hourHandWidth_value'] = options['hourHandWidth_value'];
+		localStorage['optionDateLeadingZeroSuppression_option'] = options['optionDateLeadingZeroSuppression_option'];
+		localStorage['optionHourLeadingZeroSuppression_option'] = options['optionHourLeadingZeroSuppression_option'];
+		localStorage['option12HourTime_option'] = options['option12HourTime_option'];
+		localStorage['optionHourHandSnap_option'] = options['optionHourHandSnap_option'];
+		localStorage['optionDemoMode_option'] = options['optionDemoMode_option'];
+		localStorage['optionHideWeekday_option'] = options['optionHideWeekday_option'];
+		localStorage['optionHideMonth_option'] = options['optionHideMonth_option'];
+		localStorage['optionHideDate_option'] = options['optionHideDate_option'];
+		localStorage['optionHideBattery_option'] = options['optionHideBattery_option'];
+		localStorage['optionHideConnectionLost_option'] = options['optionHideConnectionLost_option'];
+
 
 		console.log('Got options: ' + JSON.stringify(options));
 		return options;
@@ -224,14 +300,63 @@
 
 	(function()
 	{
-		var backgroundColorPicker = document.getElementById('background_color_picker');
-		var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+		var elapsedOuterColor_picker = document.getElementById('elapsedOuterColor_picker');
+		var elapsedOuterBackground_picker = document.getElementById('elapsedOuterBackground_picker');
+		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
+		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
+		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
+		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
+		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
+		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
+		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
+		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
+		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
+		var background_color_picker = document.getElementById('background_color_picker');
+		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
+		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
+		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
+		var optionHourLeadingZeroSuppression_option = document.getElementById('optionHourLeadingZeroSuppression_option');
+		var option12HourTime_option = document.getElementById('option12HourTime_option');
+		var optionHourHandSnap_option = document.getElementById('optionHourHandSnap_option');
+		var optionDemoMode_option = document.getElementById('optionDemoMode_option');
+		var optionHideWeekday_option = document.getElementById('optionHideWeekday_option');
+		var optionHideMonth_option = document.getElementById('optionHideMonth_option');
+		var optionHideDate_option = document.getElementById('optionHideDate_option');
+		var optionHideBattery_option = document.getElementById('optionHideBattery_option');
+		var optionHideConnectionLost_option = document.getElementById('optionHideConnectionLost_option');
+
 
 		// Load any previously saved configuration, if available
 		if(localStorage['high_contrast'])
 		{
-			highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
-			backgroundColorPicker.value = localStorage['background_color'];
+			elapsedOuterColor_picker.value = localStorage['elapsedOuterColor_picker'];
+			elapsedOuterBackground_picker.value = localStorage['elapsedOuterBackground_picker'];
+			elapsedInnerColor_picker.value = localStorage['elapsedInnerColor_picker'];
+			elapsedInnerBackground_picker.value = localStorage['elapsedInnerBackground_picker'];
+			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
+			hourHandColor_picker.value = localStorage['hourHandColor_picker'];
+			minuteHandColor_picker.value = localStorage['minuteHandColor_picker'];
+			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
+			complicationMonthColor_picker.value = localStorage['complicationMonthColor_picker'];
+			complicationDateColor_picker.value = localStorage['complicationDateColor_picker'];
+			complicationDayColor_picker.value = localStorage['complicationDayColor_picker'];
+			complicationBatteryColor_picker.value = localStorage['complicationBatteryColor_picker'];
+			complicationBatteryErrorColor_picker.value = localStorage['complicationBatteryErrorColor_picker'];
+			background_color_picker.value = localStorage['background_color_picker'];
+			minuteHandWidth_value.value = localStorage['minuteHandWidth_value'];
+			hourHandWidth_value.value = localStorage['hourHandWidth_value'];
+			optionDateLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionDateLeadingZeroSuppression_option']);
+			optionHourLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionHourLeadingZeroSuppression_option']);
+			option12HourTime_option.checked = JSON.parse(localStorage['option12HourTime_option']);
+			optionHourHandSnap_option.checked = JSON.parse(localStorage['optionHourHandSnap_option']);
+			optionDemoMode_option.checked = JSON.parse(localStorage['optionDemoMode_option']);
+			optionHideWeekday_option.checked = JSON.parse(localStorage['optionHideWeekday_option']);
+			optionHideMonth_option.checked = JSON.parse(localStorage['optionHideMonth_option']);
+			optionHideDate_option.checked = JSON.parse(localStorage['optionHideDate_option']);
+			optionHideBattery_option.checked = JSON.parse(localStorage['optionHideBattery_option']);
+			optionHideConnectionLost_option.checked = JSON.parse(localStorage['optionHideConnectionLost_option']);
 		}
 	})();
   </script>
