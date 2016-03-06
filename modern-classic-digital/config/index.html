@@ -336,6 +336,8 @@
 		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
 		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
 		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
+		var minuteHandWidth_slider = document.getElementById('minuteHandWidth_slider');
+		var hourHandWidth_slider = document.getElementById('hourHandWidth_slider');
 		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
 		var optionHourLeadingZeroSuppression_option = document.getElementById('optionHourLeadingZeroSuppression_option');
 		var option12HourTime_option = document.getElementById('option12HourTime_option');
@@ -366,6 +368,8 @@
 			complicationBatteryErrorColor_picker.value = localStorage['complicationBatteryErrorColor_picker'];
 			minuteHandWidth_value.value = localStorage['minuteHandWidth_value'];
 			hourHandWidth_value.value = localStorage['hourHandWidth_value'];
+			minuteHandWidth_slider.value = localStorage['minuteHandWidth_value'];
+			hourHandWidth_slider.value = localStorage['hourHandWidth_value'];
 			optionDateLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionDateLeadingZeroSuppression_option']);
 			optionHourLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionHourLeadingZeroSuppression_option']);
 			option12HourTime_option.checked = JSON.parse(localStorage['option12HourTime_option']);
