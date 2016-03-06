@@ -194,7 +194,6 @@
 		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
 		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
 		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
-		var background_color_picker = document.getElementById('background_color_picker');
 		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
 		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
 		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
@@ -223,7 +222,6 @@
 			'complicationDayColor_picker': complicationDayColor_picker.value,
 			'complicationBatteryColor_picker': complicationBatteryColor_picker.value,
 			'complicationBatteryErrorColor_picker': complicationBatteryErrorColor_picker.value,
-			'background_color_picker': background_color_picker.value,
 			'minuteHandWidth_value': minuteHandWidth_value.value,
 			'hourHandWidth_value': hourHandWidth_value.value,
 			'optionDateLeadingZeroSuppression_option': optionDateLeadingZeroSuppression_option.checked,
@@ -239,8 +237,6 @@
 		};
 
 		// Save for next launch
-		localStorage['background_color'] = options['background_color'];
-
 		localStorage['elapsedOuterColor_picker'] = options['elapsedOuterColor_picker'];
 		localStorage['elapsedOuterBackground_picker'] = options['elapsedOuterBackground_picker'];
 		localStorage['elapsedInnerColor_picker'] = options['elapsedInnerColor_picker'];
@@ -254,7 +250,6 @@
 		localStorage['complicationDayColor_picker'] = options['complicationDayColor_picker'];
 		localStorage['complicationBatteryColor_picker'] = options['complicationBatteryColor_picker'];
 		localStorage['complicationBatteryErrorColor_picker'] = options['complicationBatteryErrorColor_picker'];
-		localStorage['background_color_picker'] = options['background_color_picker'];
 		localStorage['minuteHandWidth_value'] = options['minuteHandWidth_value'];
 		localStorage['hourHandWidth_value'] = options['hourHandWidth_value'];
 		localStorage['optionDateLeadingZeroSuppression_option'] = options['optionDateLeadingZeroSuppression_option'];
@@ -313,7 +308,6 @@
 		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
 		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
 		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
-		var background_color_picker = document.getElementById('background_color_picker');
 		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
 		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
 		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
@@ -344,7 +338,6 @@
 			complicationDayColor_picker.value = localStorage['complicationDayColor_picker'];
 			complicationBatteryColor_picker.value = localStorage['complicationBatteryColor_picker'];
 			complicationBatteryErrorColor_picker.value = localStorage['complicationBatteryErrorColor_picker'];
-			background_color_picker.value = localStorage['background_color_picker'];
 			minuteHandWidth_value.value = localStorage['minuteHandWidth_value'];
 			hourHandWidth_value.value = localStorage['hourHandWidth_value'];
 			optionDateLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionDateLeadingZeroSuppression_option']);
