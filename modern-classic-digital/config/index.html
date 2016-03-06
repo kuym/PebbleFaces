@@ -52,6 +52,10 @@
           <input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
         </label>
         <label class='item'>
+          innermostTextColor
+          <input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
           hourHandColor
           <input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
         </label>
@@ -186,9 +190,9 @@
 		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
 		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
 		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var innermostTextColor_picker = document.getElementById('innermostTextColor_picker');
 		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
 		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
-		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
 		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
 		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
 		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
@@ -214,9 +218,9 @@
 			'elapsedInnerColor_picker': elapsedInnerColor_picker.value,
 			'elapsedInnerBackground_picker': elapsedInnerBackground_picker.value,
 			'innermostBackgroundColor_picker': innermostBackgroundColor_picker.value,
+			'innermostTextColor_picker': innermostTextColor_picker.value,
 			'hourHandColor_picker': hourHandColor_picker.value,
 			'minuteHandColor_picker': minuteHandColor_picker.value,
-			'innermostBackgroundColor_picker': innermostBackgroundColor_picker.value,
 			'complicationMonthColor_picker': complicationMonthColor_picker.value,
 			'complicationDateColor_picker': complicationDateColor_picker.value,
 			'complicationDayColor_picker': complicationDayColor_picker.value,
@@ -300,9 +304,9 @@
 		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
 		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
 		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
+		var innermostTextColor_picker = document.getElementById('innermostTextColor_picker');
 		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
 		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
-		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
 		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
 		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
 		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
@@ -332,7 +336,7 @@
 			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
 			hourHandColor_picker.value = localStorage['hourHandColor_picker'];
 			minuteHandColor_picker.value = localStorage['minuteHandColor_picker'];
-			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
+			innermostTextColor_picker.value = localStorage['innermostTextColor_picker'];
 			complicationMonthColor_picker.value = localStorage['complicationMonthColor_picker'];
 			complicationDateColor_picker.value = localStorage['complicationDateColor_picker'];
 			complicationDayColor_picker.value = localStorage['complicationDayColor_picker'];
