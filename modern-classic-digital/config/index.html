@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Slate Example Configuration</title>
+  <title>Modern Classic Digital Settings</title>
   <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
   <script src='js/slate.min.js'></script>
   <style>
@@ -18,22 +18,59 @@
   </head>
 
   <body>
-    <h1 class='title'>Slate Example Configuration</h1>
+    <h1 class='title'>Modern Classic Digital Settings</h1>
 
     <div class='item-container'>
       <div class='item-container-content'>
         <div class='item'>
-          Use this configuration page to choose the settings you would like applied to this app.
+          Set options or the Modern CLassic Digital watchface.
         </div>
       </div>
     </div>
 
     <div class='item-container'>
-      <div class='item-container-header'>Customizability</div>
+      <div class='item-container-header'>Appearance: colors</div>
       <div class='item-container-content'>
         <label class='item'>
-          Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+          elapsedOuterColor
+          <input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          elapsedOuterBackground
+          <input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          elapsedInnerColor
+          <input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          elapsedInnerBackground
+          <input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          innermostBackgroundColor
+          <input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        
+        <label class='item'>
+          outerCircleOuterInset
+          <input id='outerCircleOuterInset_picker' type='text' class='item-slider item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          outerCircleInnerInset
+          <input id='outerCircleInnerInset_picker' type='text' class='item-slider item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          innerCircleOuterInset
+          <input id='innerCircleOuterInset_picker' type='text' class='item-slider item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          innerCircleInnerInset
+          <input id='innerCircleInnerInset_picker' type='text' class='item-slider item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          hourHandInset
+          <input id='hourHandInset_picker' type='text' class='item-slider item-color-sunny' value='#000000'>
         </label>
       </div>
       <div class='item-container-footer'>
@@ -41,6 +78,35 @@
       </div>
     </div>
 
+    <div class='item-container'>
+      <div class='item-container-header'>Appearance: colors</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          hourHandColor
+          <input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          hourHandWidth
+          <input id='hourHandWidth_picker' type='text' class='item-slider item-color-sunny' value='0'>
+        </label>
+        <label class='item'>
+          minuteHandColor
+          <input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+        <label class='item'>
+          minuteHandWidth
+          <input id='minuteHandWidth_picker' type='text' class='item-slider item-color-sunny' value='0'>
+        </label>
+        <label class='item'>
+          innermostBackgroundColor
+          <input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+        </label>
+      </div>
+      <div class='item-container-footer'>
+        Choose the app's background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt watches that support many colors.
+      </div>
+    </div>
+    
     <div class='item-container'>
       <div class='item-container-header'>Accessibility</div>
       <div class='item-container-content'>
