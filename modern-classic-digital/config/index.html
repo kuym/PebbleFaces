@@ -102,9 +102,9 @@
 	  <div class='item-container-header'>minuteHandWidth</div>
 	  <div class='item-container-content'>
 	    <label class='item'>
-	      <input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth_slider' value='50'>
+	      <input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth_slider' min='1' value='3' max='20'>
 	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth_value' value='50'>
+	        <input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth_value' min='1' value='3' max='20'>
 	      </div>
 	    </label>
 	  </div>
@@ -114,9 +114,9 @@
 	  <div class='item-container-header'>hourHandWidth</div>
 	  <div class='item-container-content'>
 	    <label class='item'>
-	      <input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth_slider' value='50'>
+	      <input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth_slider' min='1' value='7' max='20'>
 	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth_value' value='50'>
+	        <input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth_value' min='1' value='7' max='20'>
 	      </div>
 	    </label>
 	  </div>
@@ -244,7 +244,7 @@
 		localStorage['innermostBackgroundColor_picker'] = options['innermostBackgroundColor_picker'];
 		localStorage['hourHandColor_picker'] = options['hourHandColor_picker'];
 		localStorage['minuteHandColor_picker'] = options['minuteHandColor_picker'];
-		localStorage['innermostBackgroundColor_picker'] = options['innermostBackgroundColor_picker'];
+		localStorage['innermostTextColor_picker'] = options['innermostTextColor_picker'];
 		localStorage['complicationMonthColor_picker'] = options['complicationMonthColor_picker'];
 		localStorage['complicationDateColor_picker'] = options['complicationDateColor_picker'];
 		localStorage['complicationDayColor_picker'] = options['complicationDayColor_picker'];
@@ -330,9 +330,9 @@
 			elapsedInnerColor_picker.value = localStorage['elapsedInnerColor_picker'];
 			elapsedInnerBackground_picker.value = localStorage['elapsedInnerBackground_picker'];
 			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
+			innermostTextColor_picker.value = localStorage['innermostTextColor_picker'];
 			hourHandColor_picker.value = localStorage['hourHandColor_picker'];
 			minuteHandColor_picker.value = localStorage['minuteHandColor_picker'];
-			innermostTextColor_picker.value = localStorage['innermostTextColor_picker'];
 			complicationMonthColor_picker.value = localStorage['complicationMonthColor_picker'];
 			complicationDateColor_picker.value = localStorage['complicationDateColor_picker'];
 			complicationDayColor_picker.value = localStorage['complicationDayColor_picker'];
