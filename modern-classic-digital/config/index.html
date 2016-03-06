@@ -179,6 +179,32 @@
     </div>
   </body>
   <script>
+
+	function initSlider(slider, value)
+	{
+		function onSliderUpdate(event)
+		{
+			value.value = event.target.value;
+		}
+		function onSliderValueUpdate(event)
+		{
+			var v = parseInt(event.target.value, 10);
+			if(isNaN(v))	v = 0;
+			if(v < slider.min)	v = parseInt(slider.min, 10);
+			if(v > slider.max)	v = parseInt(slider.max, 10);
+
+			event.target.value = v;
+			slider.value = v;
+		}
+		
+		slider.oninput = onSliderUpdate;
+		slider.onchange = onSliderUpdate;
+		value.onchange = onSliderValueUpdate;
+	}
+
+	initSlider(document.getElementById("minuteHandWidth_slider"), document.getElementById("minuteHandWidth_value"));
+	initSlider(document.getElementById("hourHandWidth_slider"), document.getElementById("hourHandWidth_value"));
+
 	function getConfigData()
 	{
 		var elapsedOuterColor_picker = document.getElementById('elapsedOuterColor_picker');
