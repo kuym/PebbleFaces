@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Modern Classic Digital Settings</title>
+	<link rel='stylesheet' type='text/css' href='css/slate.min.css'>
+	<script src='js/slate.js'></script>
+	<style>
+	.title {
+		padding: 15px 10px;
+		text-transform: uppercase;
+		font-family: 'PT Sans', sans-serif;
+		font-size: 1.2em;
+		font-weight: 500;
+		color: #888888;
+		text-align: center;
+	}
+	</style>
+	</head>
+
+	<body>
+		<h1 class='title'>Modern Classic Digital Settings</h1>
+
+		<div class='item-container'>
+			<div class='item-container-content'>
+				<div class='item'>
+					Set options or the Modern Classic Digital watchface.
+				</div>
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Appearance: Shapes</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Outer arc elapsed color
+					<input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+				<label class='item'>
+					Outer arc remaining color
+					<input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+				<label class='item'>
+					Inner arc elapsed color
+					<input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
+				</label>
+				<label class='item'>
+					Inner arc remaining color
+					<input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+				<label class='item'>
+					Innermost disc background color
+					<input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
+				</label>
+				<label class='item'>
+					Innermost text color
+					<input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+				</label>
+				<label class='item'>
+					Hour hand color
+					<input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+				<label class='item'>
+					Minute hand color
+					<input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				Select the colors of watchface shapes.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Appearance: Complications</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Month text color
+					<input id='complicationMonthColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Date text color
+					<input id='complicationDateColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Day-of-week text color
+					<input id='complicationDayColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Battery level color
+					<input id='complicationBatteryColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Low-battery level color
+					<input id='complicationBatteryErrorColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				Select the colors of watchface text complications.
+			</div>
+		</div>
+		
+	<div class='item-container'>
+		<div class='item-container-header'>Minute hand width</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				<input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth' min='1' value='3' max='20'>
+				<div class='item-input-wrapper item-slider-text'>
+					<input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth' min='1' value='3' max='20'>
+				</div>
+			</label>
+		</div>
+	</div>
+	
+	<div class='item-container'>
+		<div class='item-container-header'>Hour hand width</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				<input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth' min='1' value='7' max='20'>
+				<div class='item-input-wrapper item-slider-text'>
+					<input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth' min='1' value='7' max='20'>
+				</div>
+			</label>
+		</div>
+	</div>
+	
+	<div class='item-container'>
+			
+			<div class='item-container-header'>Features</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Suppress leading zeroes (date)
+					<input id='optionDateLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Suppress leading zeroes (time)
+					<input id='optionHourLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Use 12-hour time
+					<input id='option12HourTime_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Snap hour hand to hour markers
+					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Demo mode (for screenshots)
+					<input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide day-of-week complication
+					<input id='optionHideWeekday_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide month complication
+					<input id='optionHideMonth_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide date complication
+					<input id='optionHideDate_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide battery complication
+					<input id='optionHideBattery_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Do not show lost connection
+					<input id='optionHideConnectionLost_option' type='checkbox' class='item-toggle'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				These options control the appearance and presentation of watchface complications.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='button-container'>
+				<input id='submit_button' type='button' class='item-button' value='SAVE'>
+			</div>
+		</div>
+	</body>
+	<script>
+
+	function getConfigData()
+	{
+		var opts = {};
+		$("input").each(function(i, e)
+		{
+			var $e = $(e), id = $e.attr("id"), val = $e.val();
+			switch($e.attr("type"))
+			{
+			case "range":		val = parseInt(val);		break;
+			case "checkbox":	val = $e.prop("checked");	break;
+			}
+			if(id != "submit_button")
+			{
+				opts[id] = val;
+				localStorage[id] = val;
+			}
+		});
+		
+		console.log('Got options: ' + JSON.stringify(opts));
+		return(opts);
+	}
+
+	function getQueryParam(variable, defaultValue)
+	{
+		var query = location.search.substring(1);
+		var vars = query.split('&');
+		for (var i = 0; i < vars.length; i++)
+		{
+			var pair = vars[i].split('=');
+			if (pair[0] === variable)
+			{
+				return decodeURIComponent(pair[1]);
+			}
+		}
+		return defaultValue || false;
+	}
+
+	var submitButton = document.getElementById('submit_button');
+	submitButton.addEventListener('click', function()
+	{
+		console.log('Submit');
+
+		// Set the return URL depending on the runtime environment
+		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
+	});
+
+	(function()
+	{
+		$("input").each(function(i, e)
+		{
+			if(id == "submit_button")
+				return;
+			
+			var $e = $(e), id = $e.attr("id");
+			if(localStorage[id])
+			{
+				switch($e.attr("type"))
+				{
+				case "range":		$e.val(parseInt(localStorage[id]));					break;
+				case "checkbox":	$e.prop("checked", JSON.parse(localStorage[id]));	break;
+				default:			$e.val(localStorage[id]);							break;
+				}
+			}
+		});
+
+	})();
+	</script>
+</html>
