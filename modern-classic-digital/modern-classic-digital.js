@@ -5,7 +5,7 @@ Pebble.addEventListener("ready", function()
 
 Pebble.addEventListener("showConfiguration", function()
 {
-	var url = "https://rawgit.com/kuym/PebbleFaces/master/modern-classic-digital/config/index.html";
+	var url = "https://rawgit.com/kuym/PebbleFaces/master/modern-classic-digital/config/index-staging.html";
 	console.log("Showing configuration page: " + url);
 
 	Pebble.openURL(url);
@@ -38,14 +38,21 @@ Pebble.addEventListener("webviewclosed", function(e)
 		| ((configData["optionHideMonth_option"]? 1 : 0) << 6)
 		| ((configData["optionHideDate_option"]? 1 : 0) << 7)
 		| ((configData["optionHideBattery_option"]? 1 : 0) << 8)
-		| ((configData["optionHideConnectionLost_option"]? 1 : 0) << 9);
+		| ((configData["optionHideConnectionLost_option"]? 1 : 0) << 9)
+		| ((configData["optionHideDigitalTime_option"]? 1 : 0) << 10)
+		| ((configData["optionVibrateOnDisconnection_option"]? 1 : 0) << 11)
+		;
 	
+	var flags2 = (parseInt(configData["language_picker"], 10) & 0xFF)
+		;
+	
+	var customArcs = (configData["optionCustomArcColors_option"] || false);
 	var dict =
 	{
-		KEY_ELAPSED_OUTER_COLOR: parseColor(configData["elapsedOuterColor_picker"]),
-		KEY_ELAPSED_OUTER_BACKGROUND: parseColor(configData["elapsedOuterBackground_picker"]),
-		KEY_ELAPSED_INNER_COLOR: parseColor(configData["elapsedInnerColor_picker"]),
-		KEY_ELAPSED_INNER_BACKGROUND: parseColor(configData["elapsedInnerBackground_picker"]),
+		KEY_ELAPSED_OUTER_COLOR: parseColor(customArcs? configData["elapsedOuterColor_picker"] : configData["minuteHandColor_picker"]),
+		KEY_ELAPSED_OUTER_BACKGROUND: parseColor(customArcs? configData["elapsedOuterBackground_picker"] : configData["elapsedBackground_picker"]),
+		KEY_ELAPSED_INNER_COLOR: parseColor(customArcs? configData["elapsedInnerColor_picker"] : configData["hourHandColor_picker"]),
+		KEY_ELAPSED_INNER_BACKGROUND: parseColor(customArcs? configData["elapsedInnerBackground_picker"] : configData["elapsedBackground_picker"]),
 		KEY_INNERMOST_BACKGROUND_COLOR: parseColor(configData["innermostBackgroundColor_picker"]),
 		KEY_INNERMOST_TEXT_COLOR: parseColor(configData["innermostTextColor_picker"]),
 		KEY_HOUR_HAND_COLOR: parseColor(configData["hourHandColor_picker"]),
@@ -56,6 +63,9 @@ Pebble.addEventListener("webviewclosed", function(e)
 		KEY_COMPLICATION_BATTERY_COLOR: parseColor(configData["complicationBatteryColor_picker"]),
 		KEY_COMPLICATION_BATTERY_ERROR_COLOR: parseColor(configData["complicationBatteryErrorColor_picker"]),
 		KEY_FLAGS: flags,
+		KEY_FLAGS2: flags2,
+		KEY_BACKGROUND_COLOR: parseColor(configData["backgroundColor_picker"]),
+		KEY_OUTER_BACKGROUND_COLOR: parseColor(configData["outerBackgroundColor_picker"]),
 	};
 
 	console.log("dict: " + JSON.stringify(dict));
