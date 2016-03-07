@@ -1,386 +1,417 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title>Modern Classic Digital Settings</title>
-  <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
-  <script src='js/slate.min.js'></script>
-  <style>
-  .title {
-    padding: 15px 10px;
-    text-transform: uppercase;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #888888;
-    text-align: center;
-  }
-  </style>
-  </head>
-
-  <body>
-    <h1 class='title'>Modern Classic Digital Settings</h1>
-
-    <div class='item-container'>
-      <div class='item-container-content'>
-        <div class='item'>
-          Set options or the Modern Classic Digital watchface.
-        </div>
-      </div>
-    </div>
-
-    <div class='item-container'>
-      <div class='item-container-header'>Appearance: Shapes</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Outer arc elapsed color
-          <input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
-        </label>
-        <label class='item'>
-          Outer arc remaining color
-          <input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
-        </label>
-        <label class='item'>
-          Inner arc elapsed color
-          <input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
-        </label>
-        <label class='item'>
-          Inner arc remaining color
-          <input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
-        </label>
-        <label class='item'>
-          Innermost disc background color
-          <input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
-        </label>
-        <label class='item'>
-          Innermost text color
-          <input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
-        </label>
-        <label class='item'>
-          Hour hand color
-          <input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
-        </label>
-        <label class='item'>
-          Minute hand color
-          <input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        Select the colors of watchface shapes.
-      </div>
-    </div>
-
-    <div class='item-container'>
-      <div class='item-container-header'>Appearance: Complications</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Month text color
-          <input id='complicationMonthColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
-        </label>
-        <label class='item'>
-          Date text color
-          <input id='complicationDateColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
-        </label>
-        <label class='item'>
-          Day-of-week text color
-          <input id='complicationDayColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
-        </label>
-        <label class='item'>
-          Battery level color
-          <input id='complicationBatteryColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
-        </label>
-        <label class='item'>
-          Low-battery level color
-          <input id='complicationBatteryErrorColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        Select the colors of watchface text complications.
-      </div>
-    </div>
-    
-	<div class='item-container'>
-	  <div class='item-container-header'>Minute hand width</div>
-	  <div class='item-container-content'>
-	    <label class='item'>
-	      <input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth_slider' min='1' value='3' max='20'>
-	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth_value' min='1' value='3' max='20'>
-	      </div>
-	    </label>
-	  </div>
-	</div>
-	
-	<div class='item-container'>
-	  <div class='item-container-header'>Hour hand width</div>
-	  <div class='item-container-content'>
-	    <label class='item'>
-	      <input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth_slider' min='1' value='7' max='20'>
-	      <div class='item-input-wrapper item-slider-text'>
-	        <input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth_value' min='1' value='7' max='20'>
-	      </div>
-	    </label>
-	  </div>
-	</div>
-	
-	<div class='item-container'>
-      
-      <div class='item-container-header'>Features</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Suppress leading zeroes (date)
-          <input id='optionDateLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Suppress leading zeroes (time)
-          <input id='optionHourLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Use 12-hour time
-          <input id='option12HourTime_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Snap hour hand to hour markers
-          <input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Demo mode (for screenshots)
-          <input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Hide day-of-week complication
-          <input id='optionHideWeekday_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Hide month complication
-          <input id='optionHideMonth_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Hide date complication
-          <input id='optionHideDate_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Hide battery complication
-          <input id='optionHideBattery_option' type='checkbox' class='item-toggle'>
-        </label>
-        <label class='item'>
-          Do not show lost connection
-          <input id='optionHideConnectionLost_option' type='checkbox' class='item-toggle'>
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        These options control the appearance and presentation of watchface complications.
-      </div>
-    </div>
-
-    <div class='item-container'>
-      <div class='button-container'>
-        <input id='submit_button' type='button' class='item-button' value='SAVE'>
-      </div>
-    </div>
-  </body>
-  <script>
-
-	function initSlider(slider, value)
-	{
-		function onSliderUpdate(event)
-		{
-			value.value = event.target.value;
-		}
-		function onSliderValueUpdate(event)
-		{
-			var v = parseInt(event.target.value, 10);
-			if(isNaN(v))	v = 0;
-			if(v < slider.min)	v = parseInt(slider.min, 10);
-			if(v > slider.max)	v = parseInt(slider.max, 10);
-
-			event.target.value = v;
-			slider.value = v;
-		}
-		
-		slider.oninput = onSliderUpdate;
-		slider.onchange = onSliderUpdate;
-		value.onchange = onSliderValueUpdate;
+	<head>
+	<meta charset="utf-8">
+	<title>Modern Classic Digital Settings</title>
+	<link rel='stylesheet' type='text/css' href='css/slate.min.css'>
+	<script src='js/slate.js'></script>
+	<style>
+	.title {
+		padding: 15px 10px;
+		text-transform: uppercase;
+		font-family: 'PT Sans', sans-serif;
+		font-size: 1.2em;
+		font-weight: 500;
+		color: #888888;
+		text-align: center;
 	}
+	</style>
+	</head>
 
-	initSlider(document.getElementById("minuteHandWidth_slider"), document.getElementById("minuteHandWidth_value"));
-	initSlider(document.getElementById("hourHandWidth_slider"), document.getElementById("hourHandWidth_value"));
+	<body>
+		<h1 class='title'>Modern Classic Digital Settings</h1>
+
+		<div class='item-container'>
+			<div class='item-container-content'>
+				<div class='item'>
+					Set options or the Modern Classic Digital watchface.
+				</div>
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>General options</div>
+			<div class='item-container-content'>
+				
+				<label class='item'>
+					Language
+					<div class="item-subtitle">لغة / Sprache / Idioma / Langue / Lingua / Taal / Língua / язык</div>
+					<select id='language_picker' name='language_picker' dir='rtl' class='item-select'>
+						<option class='item-select-option' value='0' selected=''>أوتوماتيكي / Auto / авто</option>
+						<option class='item-select-option' value='1'>العربية</option>
+						<option class='item-select-option' value='2'>Deutsch</option>
+						<option class='item-select-option' value='3'>English</option>
+						<option class='item-select-option' value='4'>Español</option>
+						<option class='item-select-option' value='5'>Français</option>
+						<option class='item-select-option' value='6'>Italiano</option>
+						<option class='item-select-option' value='7'>Nederlands</option>
+						<option class='item-select-option' value='8'>Português</option>
+						<option class='item-select-option' value='9'>Русский</option>
+					</select>
+				<div class='select-triangle'></div></label>
+				
+				<label class='item'>
+					Hide digital time
+					<div class="item-subtitle">Remove the digital time in the center.</div>
+					<input id='optionHideDigitalTime_option' type='checkbox' class='item-toggle'>
+				</label>
+				
+				<label class='item'>
+					Use 12-hour time
+					<div class="item-subtitle">Display e.g. 10:30 instead of 22:30.</div>
+					<input id='option12HourTime_option' type='checkbox' class='item-toggle'>
+				</label>
+
+				<label class="item">
+          Reset to defaults
+          <div class="item-subtitle">Reset all settings to defaults.</div>
+          <input type="button" class="reset-button item-button item-input-button" value="RESET">
+        </label>
+
+      </div>
+			<div class='item-container-footer'>
+				The most common options.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Features</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Snap hour hand to hour markers
+					<div class="item-subtitle">Otherwise hour hand moves continuously (traditional).</div>
+					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Vibrate when connection is lost
+					<div class="item-subtitle">Watch notifies you when the Bluetooth connection is lost.</div>
+					<input id='optionVibrateOnDisconnection_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Suppress leading zeroes (time)
+					<div class="item-subtitle">Display e.g. 9:41 instead of 09:41.</div>
+					<input id='optionHourLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Suppress leading zeroes (date)
+					<div class="item-subtitle">Display e.g. 5 instead of 05.</div>
+					<input id='optionDateLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				These options control the presentation of watchface features.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Appearance: Shapes</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Minute hand color
+					<input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+				<label class='item'>
+					Hour hand color
+					<input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
+				</label>
+				<label class='item'>
+					Arc remaining color
+					<div class="item-subtitle">Color of the portion of each circle that's not the hour or minute hand color.</div>
+					<input id='elapsedBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+				<label class='item'>
+					Outer background color
+					<div class="item-subtitle">Color outside the minute circle.</div>
+					<input id='outerBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Middle background color
+					<div class="item-subtitle">Color between the minute circle and the hour circle.</div>
+					<input id='backgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Innermost disc background color
+					<div class="item-subtitle">Color within the hour circle.</div>
+					<input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Innermost time text color
+					<input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				Select the colors of watchface shapes.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Minute hand width</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					<input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth' min='1' value='3' max='20'>
+					<div class='item-input-wrapper item-slider-text'>
+						<input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth' min='1' value='3' max='20'>
+					</div>
+				</label>
+			</div>
+		</div>
+		
+		<div class='item-container'>
+			<div class='item-container-header'>Hour hand width</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					<input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth' min='1' value='7' max='20'>
+					<div class='item-input-wrapper item-slider-text'>
+						<input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth' min='1' value='7' max='20'>
+					</div>
+				</label>
+			</div>
+		</div>
+		
+
+		<div class='item-container'>
+			<div class='item-container-header'>Hide/Show Complications</div>
+			<div class='item-container-content'>
+
+				<label class='item'>
+					Hide day-of-week complication
+					<input id='optionHideWeekday_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide month complication
+					<input id='optionHideMonth_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide date complication
+					<input id='optionHideDate_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide battery complication
+					<input id='optionHideBattery_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide lost connection alert
+					<input id='optionHideConnectionLost_option' type='checkbox' class='item-toggle'>
+				</label>
+
+			</div>
+			<div class='item-container-footer'>
+				These options control the appearance of watchface complications.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Appearance: Complications</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Month text color
+					<input id='complicationMonthColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Date text color
+					<input id='complicationDateColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Day-of-week text color
+					<input id='complicationDayColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Battery level color
+					<input id='complicationBatteryColor_picker' type='text' class='item-color item-color-sunny' value='#555555'>
+				</label>
+				<label class='item'>
+					Low-battery level color
+					<input id='complicationBatteryErrorColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				Select the colors of watchface text complications.
+			</div>
+		</div>
+		
+		<div class='item-container'>
+			<div class='item-container-header'>Advanced Features (Beta) <a id='advancedToggle' href='#advancedOptions'>show/hide</a></div>
+			<div class='item-container-content' id='advancedOptions' hidden='hidden'>
+
+				<label class='item'>
+					Demo mode (for screenshots)
+					<div class="item-subtitle">Locks time and date to fixed values for screenshots.</div>
+					<input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
+				</label>
+
+				<label class='item'>
+					Custom arc/shape colors
+					<div class="item-subtitle">If enabled, activates <em>&bull; advanced options</em>.</div>
+					<input id='optionCustomArcColors_option' type='checkbox' class='item-toggle'>
+				</label>
+				
+				<label class='item'>
+					<em>&bull; Outer arc elapsed color</em>
+					<div class="item-subtitle">Typically the same as the minute hand color.</div>
+					<input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+				</label>
+				<label class='item'>
+					<em>&bull; Inner arc elapsed color</em>
+					<div class="item-subtitle">Typically the same as the minute hand color.</div>
+					<input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
+				</label>
+				<label class='item'>
+					<em>&bull; Outer arc remaining color</em>
+					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
+					<input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+				<label class='item'>
+					<em>&bull; Inner arc remaining color</em>
+					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
+					<input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+
+			</div>
+			<div class='item-container-footer'>
+				These options are for development, demonstration and diagnostics.  They're not recommended for ordinary use.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='button-container'>
+				<input id='submit_button' type='button' class='item-button' value='SAVE'>
+			</div>
+		</div>
+	</body>
+	<script>
+
+	$("#advancedToggle").click(function(e)
+	{
+		$($(e.target).attr("href")).toggle();
+		return(false);	// don't nav
+	});
 
 	function getConfigData()
 	{
-		var elapsedOuterColor_picker = document.getElementById('elapsedOuterColor_picker');
-		var elapsedOuterBackground_picker = document.getElementById('elapsedOuterBackground_picker');
-		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
-		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
-		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
-		var innermostTextColor_picker = document.getElementById('innermostTextColor_picker');
-		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
-		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
-		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
-		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
-		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
-		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
-		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
-		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
-		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
-		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
-		var optionHourLeadingZeroSuppression_option = document.getElementById('optionHourLeadingZeroSuppression_option');
-		var option12HourTime_option = document.getElementById('option12HourTime_option');
-		var optionHourHandSnap_option = document.getElementById('optionHourHandSnap_option');
-		var optionDemoMode_option = document.getElementById('optionDemoMode_option');
-		var optionHideWeekday_option = document.getElementById('optionHideWeekday_option');
-		var optionHideMonth_option = document.getElementById('optionHideMonth_option');
-		var optionHideDate_option = document.getElementById('optionHideDate_option');
-		var optionHideBattery_option = document.getElementById('optionHideBattery_option');
-		var optionHideConnectionLost_option = document.getElementById('optionHideConnectionLost_option');
-
-		var options =
+		var opts = {};
+		$("input").each(function(i, e)
 		{
-			'elapsedOuterColor_picker': elapsedOuterColor_picker.value,
-			'elapsedOuterBackground_picker': elapsedOuterBackground_picker.value,
-			'elapsedInnerColor_picker': elapsedInnerColor_picker.value,
-			'elapsedInnerBackground_picker': elapsedInnerBackground_picker.value,
-			'innermostBackgroundColor_picker': innermostBackgroundColor_picker.value,
-			'innermostTextColor_picker': innermostTextColor_picker.value,
-			'hourHandColor_picker': hourHandColor_picker.value,
-			'minuteHandColor_picker': minuteHandColor_picker.value,
-			'complicationMonthColor_picker': complicationMonthColor_picker.value,
-			'complicationDateColor_picker': complicationDateColor_picker.value,
-			'complicationDayColor_picker': complicationDayColor_picker.value,
-			'complicationBatteryColor_picker': complicationBatteryColor_picker.value,
-			'complicationBatteryErrorColor_picker': complicationBatteryErrorColor_picker.value,
-			'minuteHandWidth_value': minuteHandWidth_value.value,
-			'hourHandWidth_value': hourHandWidth_value.value,
-			'optionDateLeadingZeroSuppression_option': optionDateLeadingZeroSuppression_option.checked,
-			'optionHourLeadingZeroSuppression_option': optionHourLeadingZeroSuppression_option.checked,
-			'option12HourTime_option': option12HourTime_option.checked,
-			'optionHourHandSnap_option': optionHourHandSnap_option.checked,
-			'optionDemoMode_option': optionDemoMode_option.checked,
-			'optionHideWeekday_option': optionHideWeekday_option.checked,
-			'optionHideMonth_option': optionHideMonth_option.checked,
-			'optionHideDate_option': optionHideDate_option.checked,
-			'optionHideBattery_option': optionHideBattery_option.checked,
-			'optionHideConnectionLost_option': optionHideConnectionLost_option.checked,
-		};
-
-		// Save for next launch
-		localStorage['elapsedOuterColor_picker'] = options['elapsedOuterColor_picker'];
-		localStorage['elapsedOuterBackground_picker'] = options['elapsedOuterBackground_picker'];
-		localStorage['elapsedInnerColor_picker'] = options['elapsedInnerColor_picker'];
-		localStorage['elapsedInnerBackground_picker'] = options['elapsedInnerBackground_picker'];
-		localStorage['innermostBackgroundColor_picker'] = options['innermostBackgroundColor_picker'];
-		localStorage['hourHandColor_picker'] = options['hourHandColor_picker'];
-		localStorage['minuteHandColor_picker'] = options['minuteHandColor_picker'];
-		localStorage['innermostTextColor_picker'] = options['innermostTextColor_picker'];
-		localStorage['complicationMonthColor_picker'] = options['complicationMonthColor_picker'];
-		localStorage['complicationDateColor_picker'] = options['complicationDateColor_picker'];
-		localStorage['complicationDayColor_picker'] = options['complicationDayColor_picker'];
-		localStorage['complicationBatteryColor_picker'] = options['complicationBatteryColor_picker'];
-		localStorage['complicationBatteryErrorColor_picker'] = options['complicationBatteryErrorColor_picker'];
-		localStorage['minuteHandWidth_value'] = options['minuteHandWidth_value'];
-		localStorage['hourHandWidth_value'] = options['hourHandWidth_value'];
-		localStorage['optionDateLeadingZeroSuppression_option'] = options['optionDateLeadingZeroSuppression_option'];
-		localStorage['optionHourLeadingZeroSuppression_option'] = options['optionHourLeadingZeroSuppression_option'];
-		localStorage['option12HourTime_option'] = options['option12HourTime_option'];
-		localStorage['optionHourHandSnap_option'] = options['optionHourHandSnap_option'];
-		localStorage['optionDemoMode_option'] = options['optionDemoMode_option'];
-		localStorage['optionHideWeekday_option'] = options['optionHideWeekday_option'];
-		localStorage['optionHideMonth_option'] = options['optionHideMonth_option'];
-		localStorage['optionHideDate_option'] = options['optionHideDate_option'];
-		localStorage['optionHideBattery_option'] = options['optionHideBattery_option'];
-		localStorage['optionHideConnectionLost_option'] = options['optionHideConnectionLost_option'];
-
-
-		console.log('Got options: ' + JSON.stringify(options));
-		return options;
+			var $e = $(e), id = $e.attr("id"), val = $e.val();
+			switch($e.attr("type"))
+			{
+			case "range":		val = parseInt(val);		break;
+			case "checkbox":	val = $e.prop("checked");	break;
+			}
+			if(id != "submit_button")
+			{
+				opts[id] = val;
+				localStorage[id] = val;
+			}
+		});
+		$("select").each(function(i, e)
+		{
+			var $e = $(e), id = $e.attr("id"), val = $e.val();
+			opts[id] = val;
+			localStorage[id] = val;
+		});
+		
+		console.log("Got options: " + JSON.stringify(opts));
+		return(opts);
 	}
 
 	function getQueryParam(variable, defaultValue)
 	{
 		var query = location.search.substring(1);
-		var vars = query.split('&');
-		for (var i = 0; i < vars.length; i++)
+		var vars = query.split("&");
+		for(var i = 0; i < vars.length; i++)
 		{
-			var pair = vars[i].split('=');
-			if (pair[0] === variable)
+			var pair = vars[i].split("=");
+			if(pair[0] === variable)
 			{
-				return decodeURIComponent(pair[1]);
+				return(decodeURIComponent(pair[1]));
 			}
 		}
-		return defaultValue || false;
+		return(defaultValue || false);
 	}
 
-	var submitButton = document.getElementById('submit_button');
-	submitButton.addEventListener('click', function()
+	$("#submit_button").click(function()
 	{
-		console.log('Submit');
+		console.log("Submit");
 
 		// Set the return URL depending on the runtime environment
-		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		var return_to = getQueryParam("return_to", "pebblejs://close#");
+		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
+	});
+	$(".reset-button").click(function()
+	{
+		console.log("Reset");
+
+		var defaults =
+		{
+			language_picker: 0,
+			optionHideDigitalTime_option: false,
+			option12HourTime_option: false,
+			optionHourHandSnap_option: false,
+			optionVibrateOnDisconnection_option: false,
+			optionHourLeadingZeroSuppression_option: false,
+			optionDateLeadingZeroSuppression_option: false,
+			minuteHandColor_picker: "#AA0000",
+			hourHandColor_picker: "#0000FF",
+			elapsedBackground_picker: "#AAAAAA",
+			outerBackgroundColor_picker: "#FFFFFF",
+			backgroundColor_picker: "#FFFFFF",
+			innermostBackgroundColor_picker: "#FFFFFF",
+			innermostTextColor_picker: "#000000",
+			optionHideWeekday_option: false,
+			optionHideMonth_option: false,
+			optionHideDate_option: false,
+			optionHideBattery_option: false,
+			optionHideConnectionLost_option: false,
+			complicationMonthColor_picker: "#555555",
+			complicationDateColor_picker: "#555555",
+			complicationDayColor_picker: "#555555",
+			complicationBatteryColor_picker: "#555555",
+			complicationBatteryErrorColor_picker: "#AA0000",
+			optionDemoMode_option: false,
+			optionCustomArcColors_option: false,
+			elapsedOuterColor_picker: "#AA0000",
+			elapsedInnerColor_picker: "#0000FF",
+			elapsedOuterBackground_picker: "#AAAAAA",
+			elapsedInnerBackground_picker: "#AAAAAA",
+		};
+
+		Object.keys(defaults).forEach(function(k){localStorage[k] = defaults[k];});
+		restoreLocalSettings();
+
+		// Set the return URL depending on the runtime environment
+		var return_to = getQueryParam("return_to", "pebblejs://close#");
 		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
 	});
 
-	(function()
+	function restoreLocalSettings()
 	{
-		var elapsedOuterColor_picker = document.getElementById('elapsedOuterColor_picker');
-		var elapsedOuterBackground_picker = document.getElementById('elapsedOuterBackground_picker');
-		var elapsedInnerColor_picker = document.getElementById('elapsedInnerColor_picker');
-		var elapsedInnerBackground_picker = document.getElementById('elapsedInnerBackground_picker');
-		var innermostBackgroundColor_picker = document.getElementById('innermostBackgroundColor_picker');
-		var innermostTextColor_picker = document.getElementById('innermostTextColor_picker');
-		var hourHandColor_picker = document.getElementById('hourHandColor_picker');
-		var minuteHandColor_picker = document.getElementById('minuteHandColor_picker');
-		var complicationMonthColor_picker = document.getElementById('complicationMonthColor_picker');
-		var complicationDateColor_picker = document.getElementById('complicationDateColor_picker');
-		var complicationDayColor_picker = document.getElementById('complicationDayColor_picker');
-		var complicationBatteryColor_picker = document.getElementById('complicationBatteryColor_picker');
-		var complicationBatteryErrorColor_picker = document.getElementById('complicationBatteryErrorColor_picker');
-		var minuteHandWidth_value = document.getElementById('minuteHandWidth_value');
-		var hourHandWidth_value = document.getElementById('hourHandWidth_value');
-		var minuteHandWidth_slider = document.getElementById('minuteHandWidth_slider');
-		var hourHandWidth_slider = document.getElementById('hourHandWidth_slider');
-		var optionDateLeadingZeroSuppression_option = document.getElementById('optionDateLeadingZeroSuppression_option');
-		var optionHourLeadingZeroSuppression_option = document.getElementById('optionHourLeadingZeroSuppression_option');
-		var option12HourTime_option = document.getElementById('option12HourTime_option');
-		var optionHourHandSnap_option = document.getElementById('optionHourHandSnap_option');
-		var optionDemoMode_option = document.getElementById('optionDemoMode_option');
-		var optionHideWeekday_option = document.getElementById('optionHideWeekday_option');
-		var optionHideMonth_option = document.getElementById('optionHideMonth_option');
-		var optionHideDate_option = document.getElementById('optionHideDate_option');
-		var optionHideBattery_option = document.getElementById('optionHideBattery_option');
-		var optionHideConnectionLost_option = document.getElementById('optionHideConnectionLost_option');
-
-
-		// Load any previously saved configuration, if available
-		if(localStorage['elapsedOuterColor_picker'])
+		$("input").each(function(i, e)
 		{
-			elapsedOuterColor_picker.value = localStorage['elapsedOuterColor_picker'];
-			elapsedOuterBackground_picker.value = localStorage['elapsedOuterBackground_picker'];
-			elapsedInnerColor_picker.value = localStorage['elapsedInnerColor_picker'];
-			elapsedInnerBackground_picker.value = localStorage['elapsedInnerBackground_picker'];
-			innermostBackgroundColor_picker.value = localStorage['innermostBackgroundColor_picker'];
-			innermostTextColor_picker.value = localStorage['innermostTextColor_picker'];
-			hourHandColor_picker.value = localStorage['hourHandColor_picker'];
-			minuteHandColor_picker.value = localStorage['minuteHandColor_picker'];
-			complicationMonthColor_picker.value = localStorage['complicationMonthColor_picker'];
-			complicationDateColor_picker.value = localStorage['complicationDateColor_picker'];
-			complicationDayColor_picker.value = localStorage['complicationDayColor_picker'];
-			complicationBatteryColor_picker.value = localStorage['complicationBatteryColor_picker'];
-			complicationBatteryErrorColor_picker.value = localStorage['complicationBatteryErrorColor_picker'];
-			minuteHandWidth_value.value = localStorage['minuteHandWidth_value'];
-			hourHandWidth_value.value = localStorage['hourHandWidth_value'];
-			minuteHandWidth_slider.value = localStorage['minuteHandWidth_value'];
-			hourHandWidth_slider.value = localStorage['hourHandWidth_value'];
-			optionDateLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionDateLeadingZeroSuppression_option']);
-			optionHourLeadingZeroSuppression_option.checked = JSON.parse(localStorage['optionHourLeadingZeroSuppression_option']);
-			option12HourTime_option.checked = JSON.parse(localStorage['option12HourTime_option']);
-			optionHourHandSnap_option.checked = JSON.parse(localStorage['optionHourHandSnap_option']);
-			optionDemoMode_option.checked = JSON.parse(localStorage['optionDemoMode_option']);
-			optionHideWeekday_option.checked = JSON.parse(localStorage['optionHideWeekday_option']);
-			optionHideMonth_option.checked = JSON.parse(localStorage['optionHideMonth_option']);
-			optionHideDate_option.checked = JSON.parse(localStorage['optionHideDate_option']);
-			optionHideBattery_option.checked = JSON.parse(localStorage['optionHideBattery_option']);
-			optionHideConnectionLost_option.checked = JSON.parse(localStorage['optionHideConnectionLost_option']);
-		}
-	})();
-  </script>
+			if(id == "submit_button")
+				return;
+			
+			var $e = $(e), id = $e.attr("id");
+			if(localStorage[id])
+			{
+				switch($e.attr("type"))
+				{
+				case "range":		$e.val(parseInt(localStorage[id]));					break;
+				case "checkbox":	$e.prop("checked", JSON.parse(localStorage[id]));	break;
+				default:			$e.val(localStorage[id]);							break;
+				}
+			}
+		});
+		$("select").each(function(i, e)
+		{
+			var $e = $(e), id = $e.attr("id");
+			if(localStorage[id])
+			{
+				$e.val(localStorage[id]);
+			}
+		});
+
+	}
+
+	restoreLocalSettings();
+	</script>
 </html>

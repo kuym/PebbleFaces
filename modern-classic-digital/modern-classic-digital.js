@@ -5,7 +5,7 @@ Pebble.addEventListener("ready", function()
 
 Pebble.addEventListener("showConfiguration", function()
 {
-	var url = "https://rawgit.com/kuym/PebbleFaces/master/modern-classic-digital/config/index-staging.html";
+	var url = "https://rawgit.com/kuym/PebbleFaces/master/modern-classic-digital/config/index.html";
 	console.log("Showing configuration page: " + url);
 
 	Pebble.openURL(url);
