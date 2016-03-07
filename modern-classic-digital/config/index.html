@@ -230,14 +230,8 @@
 		</div>
 		
 		<div class='item-container'>
-			<div class='item-container-header'>Advanced Features (Beta) <a id='advancedToggle' href='#advancedOptions'>show/hide</a></div>
-			<div class='item-container-content' id='advancedOptions' hidden='hidden'>
-
-				<label class='item'>
-					Demo mode (for screenshots)
-					<div class="item-subtitle">Locks time and date to fixed values for screenshots.</div>
-					<input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
-				</label>
+			<div class='item-container-header'>Advanced Features</div>
+			<div class='item-container-content' id='advancedOptions'>
 
 				<label class='item'>
 					Custom arc/shape colors
@@ -245,25 +239,31 @@
 					<input id='optionCustomArcColors_option' type='checkbox' class='item-toggle'>
 				</label>
 				
-				<label class='item'>
+				<label class='item advanced-color'>
 					<em>&bull; Outer arc elapsed color</em>
 					<div class="item-subtitle">Typically the same as the minute hand color.</div>
 					<input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
 				</label>
-				<label class='item'>
+				<label class='item advanced-color'>
 					<em>&bull; Inner arc elapsed color</em>
 					<div class="item-subtitle">Typically the same as the minute hand color.</div>
 					<input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
 				</label>
-				<label class='item'>
+				<label class='item advanced-color'>
 					<em>&bull; Outer arc remaining color</em>
 					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
 					<input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
 				</label>
-				<label class='item'>
+				<label class='item advanced-color'>
 					<em>&bull; Inner arc remaining color</em>
 					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
 					<input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+
+				<label class='item'>
+					Demo mode (for screenshots)
+					<div class="item-subtitle">Locks time and date to fixed values for screenshots.</div>
+					<input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
 				</label>
 
 			</div>
@@ -383,8 +383,22 @@
 		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
 	});
 
+	$("#optionCustomArcColors_option").change(function(e)
+	{
+		if($(e.target).prop("checked"))
+			$(".advanced-color").show();
+		else
+			$(".advanced-color").hide();
+	});
+
 	function restoreLocalSettings()
 	{
+		var customArcColors = localStorage["optionCustomArcColors_option"];
+		if(customArcColors && (JSON.parse(customArcColors) === true))
+			$(".advanced-color").show();
+		else
+			$(".advanced-color").hide();
+		
 		$("input").each(function(i, e)
 		{
 			if(id == "submit_button")
@@ -409,7 +423,6 @@
 				$e.val(localStorage[id]);
 			}
 		});
-
 	}
 
 	restoreLocalSettings();
