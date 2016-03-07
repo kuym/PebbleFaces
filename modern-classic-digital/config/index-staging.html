@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<meta charset="utf-8">
 	<title>Modern Classic Digital Settings</title>
 	<link rel='stylesheet' type='text/css' href='css/slate.min.css'>
 	<script src='js/slate.js'></script>
@@ -29,43 +30,166 @@
 		</div>
 
 		<div class='item-container'>
+			<div class='item-container-header'>General options</div>
+			<div class='item-container-content'>
+				
+				<label class='item'>
+					Language
+					<div class="item-subtitle">لغة / Sprache / Idioma / Langue / Lingua / Taal / Língua / язык</div>
+					<select id='language_picker' name='language_picker' dir='rtl' class='item-select'>
+						<option class='item-select-option' value='1'>العربية</option>
+						<option class='item-select-option' value='2'>Deutsch</option>
+						<option class='item-select-option' value='0' selected=''>English</option>
+						<option class='item-select-option' value='3'>Español</option>
+						<option class='item-select-option' value='4'>Français</option>
+						<option class='item-select-option' value='5'>Italiano</option>
+						<option class='item-select-option' value='6'>Nederlands</option>
+						<option class='item-select-option' value='7'>Português</option>
+						<option class='item-select-option' value='8'>Русский</option>
+					</select>
+				<div class='select-triangle'></div></label>
+				
+				<label class='item'>
+					Hide digital time
+					<div class="item-subtitle">Remove the digital time in the center.</div>
+					<input id='optionHideDigitalTime_option' type='checkbox' class='item-toggle'>
+				</label>
+				
+				<label class='item'>
+					Use 12-hour time
+					<div class="item-subtitle">Display e.g. 10:30 instead of 22:30.</div>
+					<input id='option12HourTime_option' type='checkbox' class='item-toggle'>
+				</label>
+
+			</div>
+			<div class='item-container-footer'>
+				The most common options.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Features</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					Snap hour hand to hour markers
+					<div class="item-subtitle">Otherwise hour hand moves continuously (traditional).</div>
+					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Vibrate when connection is lost
+					<div class="item-subtitle">Watch notifies you when the Bluetooth connection is lost.</div>
+					<input id='optionVibrateOnDisconnection_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Suppress leading zeroes (time)
+					<div class="item-subtitle">Display e.g. 9:41 instead of 09:41.</div>
+					<input id='optionHourLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Suppress leading zeroes (date)
+					<div class="item-subtitle">Display e.g. 5 instead of 05.</div>
+					<input id='optionDateLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				These options control the presentation of watchface features.
+			</div>
+		</div>
+
+		<div class='item-container'>
 			<div class='item-container-header'>Appearance: Shapes</div>
 			<div class='item-container-content'>
 				<label class='item'>
-					Outer arc elapsed color
-					<input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
-				</label>
-				<label class='item'>
-					Outer arc remaining color
-					<input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
-				</label>
-				<label class='item'>
-					Inner arc elapsed color
-					<input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
-				</label>
-				<label class='item'>
-					Inner arc remaining color
-					<input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
-				</label>
-				<label class='item'>
-					Innermost disc background color
-					<input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
-				</label>
-				<label class='item'>
-					Innermost text color
-					<input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+					Minute hand color
+					<input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
 				</label>
 				<label class='item'>
 					Hour hand color
-					<input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
+					<input id='hourHandColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
 				</label>
 				<label class='item'>
-					Minute hand color
-					<input id='minuteHandColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+					Arc remaining color
+					<div class="item-subtitle">Color of the portion of each circle that's not the hour or minute hand color.</div>
+					<input id='elapsedBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
+				</label>
+				<label class='item'>
+					Outer background color
+					<div class="item-subtitle">Color outside the minute circle.</div>
+					<input id='outerBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Middle background color
+					<div class="item-subtitle">Color between the minute circle and the hour circle.</div>
+					<input id='backgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Innermost disc background color
+					<div class="item-subtitle">Color within the hour circle.</div>
+					<input id='innermostBackgroundColor_picker' type='text' class='item-color item-color-sunny' value='#FFFFFF'>
+				</label>
+				<label class='item'>
+					Innermost time text color
+					<input id='innermostTextColor_picker' type='text' class='item-color item-color-sunny' value='#000000'>
 				</label>
 			</div>
 			<div class='item-container-footer'>
 				Select the colors of watchface shapes.
+			</div>
+		</div>
+
+		<div class='item-container'>
+			<div class='item-container-header'>Minute hand width</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					<input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth' min='1' value='3' max='20'>
+					<div class='item-input-wrapper item-slider-text'>
+						<input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth' min='1' value='3' max='20'>
+					</div>
+				</label>
+			</div>
+		</div>
+		
+		<div class='item-container'>
+			<div class='item-container-header'>Hour hand width</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					<input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth' min='1' value='7' max='20'>
+					<div class='item-input-wrapper item-slider-text'>
+						<input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth' min='1' value='7' max='20'>
+					</div>
+				</label>
+			</div>
+		</div>
+		
+
+		<div class='item-container'>
+			<div class='item-container-header'>Hide/Show Complications</div>
+			<div class='item-container-content'>
+
+				<label class='item'>
+					Hide day-of-week complication
+					<input id='optionHideWeekday_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide month complication
+					<input id='optionHideMonth_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide date complication
+					<input id='optionHideDate_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide battery complication
+					<input id='optionHideBattery_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Hide lost connection alert
+					<input id='optionHideConnectionLost_option' type='checkbox' class='item-toggle'>
+				</label>
+
+			</div>
+			<div class='item-container-footer'>
+				These options control the appearance watchface complications.
 			</div>
 		</div>
 
@@ -98,77 +222,46 @@
 			</div>
 		</div>
 		
-	<div class='item-container'>
-		<div class='item-container-header'>Minute hand width</div>
-		<div class='item-container-content'>
-			<label class='item'>
-				<input type='range' class='item-slider' id='minuteHandWidth_slider' name='minuteHandWidth' min='1' value='3' max='20'>
-				<div class='item-input-wrapper item-slider-text'>
-					<input type='text' class='item-input' id='minuteHandWidth_value' name='minuteHandWidth' min='1' value='3' max='20'>
-				</div>
-			</label>
-		</div>
-	</div>
-	
-	<div class='item-container'>
-		<div class='item-container-header'>Hour hand width</div>
-		<div class='item-container-content'>
-			<label class='item'>
-				<input type='range' class='item-slider' id='hourHandWidth_slider' name='hourHandWidth' min='1' value='7' max='20'>
-				<div class='item-input-wrapper item-slider-text'>
-					<input type='text' class='item-input' id='hourHandWidth_value' name='hourHandWidth' min='1' value='7' max='20'>
-				</div>
-			</label>
-		</div>
-	</div>
-	
-	<div class='item-container'>
-			
-			<div class='item-container-header'>Features</div>
-			<div class='item-container-content'>
-				<label class='item'>
-					Suppress leading zeroes (date)
-					<input id='optionDateLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
-				</label>
-				<label class='item'>
-					Suppress leading zeroes (time)
-					<input id='optionHourLeadingZeroSuppression_option' type='checkbox' class='item-toggle'>
-				</label>
-				<label class='item'>
-					Use 12-hour time
-					<input id='option12HourTime_option' type='checkbox' class='item-toggle'>
-				</label>
-				<label class='item'>
-					Snap hour hand to hour markers
-					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
-				</label>
+		<div class='item-container'>
+			<div class='item-container-header'>Advanced Features (Beta) <a id='advancedToggle' href='#'>show/hide</a></div>
+			<div class='item-container-content' id='advancedOptions' hidden='hidden'>
+
 				<label class='item'>
 					Demo mode (for screenshots)
+					<div class="item-subtitle">Locks time and date to fixed values for screenshots.</div>
 					<input id='optionDemoMode_option' type='checkbox' class='item-toggle'>
 				</label>
+
 				<label class='item'>
-					Hide day-of-week complication
-					<input id='optionHideWeekday_option' type='checkbox' class='item-toggle'>
+					Custom arc/shape colors
+					<div class="item-subtitle">If enabled, activates <em>&bull; advanced options</em>.</div>
+					<input id='optionCustomArcColors_option' type='checkbox' class='item-toggle'>
+				</label>
+				
+				<label class='item'>
+					<em>&bull; Outer arc elapsed color</em>
+					<div class="item-subtitle">Typically the same as the minute hand color.</div>
+					<input id='elapsedOuterColor_picker' type='text' class='item-color item-color-sunny' value='#AA0000'>
 				</label>
 				<label class='item'>
-					Hide month complication
-					<input id='optionHideMonth_option' type='checkbox' class='item-toggle'>
+					<em>&bull; Inner arc elapsed color</em>
+					<div class="item-subtitle">Typically the same as the minute hand color.</div>
+					<input id='elapsedInnerColor_picker' type='text' class='item-color item-color-sunny' value='#0000FF'>
 				</label>
 				<label class='item'>
-					Hide date complication
-					<input id='optionHideDate_option' type='checkbox' class='item-toggle'>
+					<em>&bull; Outer arc remaining color</em>
+					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
+					<input id='elapsedOuterBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
 				</label>
 				<label class='item'>
-					Hide battery complication
-					<input id='optionHideBattery_option' type='checkbox' class='item-toggle'>
+					<em>&bull; Inner arc remaining color</em>
+					<div class="item-subtitle">Color of the remaining (not elapsed) arc.</div>
+					<input id='elapsedInnerBackground_picker' type='text' class='item-color item-color-sunny' value='#AAAAAA'>
 				</label>
-				<label class='item'>
-					Do not show lost connection
-					<input id='optionHideConnectionLost_option' type='checkbox' class='item-toggle'>
-				</label>
+
 			</div>
 			<div class='item-container-footer'>
-				These options control the appearance and presentation of watchface complications.
+				These options are for development, demonstration and diagnostics.  They're not recommended for ordinary use.
 			</div>
 		</div>
 
@@ -179,6 +272,12 @@
 		</div>
 	</body>
 	<script>
+
+	$("#advancedToggle").click(function()
+	{
+		$("#advancedOptions").toggle();
+		return(false);	// don't nav
+	});
 
 	function getConfigData()
 	{
@@ -196,6 +295,12 @@
 				opts[id] = val;
 				localStorage[id] = val;
 			}
+		});
+		$("select").each(function(i, e)
+		{
+			var $e = $(e), id = $e.attr("id"), val = $e.val();
+			opts[id] = val;
+			localStorage[id] = val;
 		});
 		
 		console.log('Got options: ' + JSON.stringify(opts));
@@ -243,6 +348,14 @@
 				case "checkbox":	$e.prop("checked", JSON.parse(localStorage[id]));	break;
 				default:			$e.val(localStorage[id]);							break;
 				}
+			}
+		});
+		$("select").each(function(i, e)
+		{
+			var $e = $(e), id = $e.attr("id");
+			if(localStorage[id])
+			{
+				$e.val(localStorage[id]);
 			}
 		});
 
