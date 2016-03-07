@@ -62,7 +62,13 @@
 					<input id='option12HourTime_option' type='checkbox' class='item-toggle'>
 				</label>
 
-			</div>
+				<label class="item">
+          Reset to defaults
+          <div class="item-subtitle">Reset all settings to defaults.</div>
+          <input type="button" class="reset-button item-button item-input-button" value="RESET">
+        </label>
+
+      </div>
 			<div class='item-container-footer'>
 				The most common options.
 			</div>
@@ -190,7 +196,7 @@
 
 			</div>
 			<div class='item-container-footer'>
-				These options control the appearance watchface complications.
+				These options control the appearance of watchface complications.
 			</div>
 		</div>
 
@@ -224,7 +230,7 @@
 		</div>
 		
 		<div class='item-container'>
-			<div class='item-container-header'>Advanced Features (Beta) <a id='advancedToggle' href='#'>show/hide</a></div>
+			<div class='item-container-header'>Advanced Features (Beta) <a id='advancedToggle' href='#advancedOptions'>show/hide</a></div>
 			<div class='item-container-content' id='advancedOptions' hidden='hidden'>
 
 				<label class='item'>
@@ -274,9 +280,9 @@
 	</body>
 	<script>
 
-	$("#advancedToggle").click(function()
+	$("#advancedToggle").click(function(e)
 	{
-		$("#advancedOptions").toggle();
+		$($(e.target).attr("href")).toggle();
 		return(false);	// don't nav
 	});
 
@@ -304,36 +310,80 @@
 			localStorage[id] = val;
 		});
 		
-		console.log('Got options: ' + JSON.stringify(opts));
+		console.log("Got options: " + JSON.stringify(opts));
 		return(opts);
 	}
 
 	function getQueryParam(variable, defaultValue)
 	{
 		var query = location.search.substring(1);
-		var vars = query.split('&');
-		for (var i = 0; i < vars.length; i++)
+		var vars = query.split("&");
+		for(var i = 0; i < vars.length; i++)
 		{
-			var pair = vars[i].split('=');
-			if (pair[0] === variable)
+			var pair = vars[i].split("=");
+			if(pair[0] === variable)
 			{
-				return decodeURIComponent(pair[1]);
+				return(decodeURIComponent(pair[1]));
 			}
 		}
-		return defaultValue || false;
+		return(defaultValue || false);
 	}
 
-	var submitButton = document.getElementById('submit_button');
-	submitButton.addEventListener('click', function()
+	$("#submit_button").click(function()
 	{
-		console.log('Submit');
+		console.log("Submit");
 
 		// Set the return URL depending on the runtime environment
-		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		var return_to = getQueryParam("return_to", "pebblejs://close#");
+		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
+	});
+	$(".reset-button").click(function()
+	{
+		console.log("Reset");
+
+		var defaults =
+		{
+			language_picker: 0,
+			optionHideDigitalTime_option: false,
+			option12HourTime_option: false,
+			optionHourHandSnap_option: false,
+			optionVibrateOnDisconnection_option: false,
+			optionHourLeadingZeroSuppression_option: false,
+			optionDateLeadingZeroSuppression_option: false,
+			minuteHandColor_picker: "#AA0000",
+			hourHandColor_picker: "#0000FF",
+			elapsedBackground_picker: "#AAAAAA",
+			outerBackgroundColor_picker: "#FFFFFF",
+			backgroundColor_picker: "#FFFFFF",
+			innermostBackgroundColor_picker: "#FFFFFF",
+			innermostTextColor_picker: "#000000",
+			optionHideWeekday_option: false,
+			optionHideMonth_option: false,
+			optionHideDate_option: false,
+			optionHideBattery_option: false,
+			optionHideConnectionLost_option: false,
+			complicationMonthColor_picker: "#555555",
+			complicationDateColor_picker: "#555555",
+			complicationDayColor_picker: "#555555",
+			complicationBatteryColor_picker: "#555555",
+			complicationBatteryErrorColor_picker: "#AA0000",
+			optionDemoMode_option: false,
+			optionCustomArcColors_option: false,
+			elapsedOuterColor_picker: "#AA0000",
+			elapsedInnerColor_picker: "#0000FF",
+			elapsedOuterBackground_picker: "#AAAAAA",
+			elapsedInnerBackground_picker: "#AAAAAA",
+		};
+
+		Object.keys(defaults).forEach(function(k){localStorage[k] = defaults[k];});
+		restoreLocalSettings();
+
+		// Set the return URL depending on the runtime environment
+		var return_to = getQueryParam("return_to", "pebblejs://close#");
 		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
 	});
 
-	(function()
+	function restoreLocalSettings()
 	{
 		$("input").each(function(i, e)
 		{
@@ -360,6 +410,8 @@
 			}
 		});
 
-	})();
+	}
+
+	restoreLocalSettings();
 	</script>
 </html>
