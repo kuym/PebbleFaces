@@ -78,14 +78,14 @@
 			<div class='item-container-header'>Features</div>
 			<div class='item-container-content'>
 				<label class='item'>
-					Snap hour hand to hour markers
-					<div class="item-subtitle">Otherwise hour hand moves continuously (traditional).</div>
-					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
-				</label>
-				<label class='item'>
 					Vibrate when connection is lost
 					<div class="item-subtitle">Watch notifies you when the Bluetooth connection is lost.</div>
 					<input id='optionVibrateOnDisconnection_option' type='checkbox' class='item-toggle'>
+				</label>
+				<label class='item'>
+					Snap hour hand to hour markers
+					<div class="item-subtitle">Otherwise hour hand moves continuously (traditional).</div>
+					<input id='optionHourHandSnap_option' type='checkbox' class='item-toggle'>
 				</label>
 				<label class='item'>
 					Suppress leading zeroes (time)
@@ -200,6 +200,21 @@
 			</div>
 		</div>
 
+		<div class='item-container'>
+			<div class='item-container-header'>Show battery level if below:</div>
+			<div class='item-container-content'>
+				<label class='item'>
+					<input type='range' class='item-slider' id='showBatteryLevel_slider' name='showBatteryLevel' min='0' value='20' max='100'>
+					<div class='item-input-wrapper item-slider-text'>
+						<input type='text' class='item-input' id='showBatteryLevel_value' name='showBatteryLevel' min='0' value='20' max='100'>
+					</div>
+				</label>
+			</div>
+			<div class='item-container-footer'>
+				If greater than 0 and <em>"Hide battery complication"</em> is enabled, will display the battery complication if the battery level falls below this threshold.
+			</div>
+		</div>
+		
 		<div class='item-container'>
 			<div class='item-container-header'>Appearance: Complications</div>
 			<div class='item-container-content'>
@@ -343,36 +358,37 @@
 
 		var defaults =
 		{
-			language_picker: 0,
-			optionHideDigitalTime_option: false,
-			option12HourTime_option: false,
-			optionHourHandSnap_option: false,
-			optionVibrateOnDisconnection_option: false,
-			optionHourLeadingZeroSuppression_option: false,
-			optionDateLeadingZeroSuppression_option: false,
-			minuteHandColor_picker: "#AA0000",
-			hourHandColor_picker: "#0000FF",
-			elapsedBackground_picker: "#AAAAAA",
-			outerBackgroundColor_picker: "#FFFFFF",
 			backgroundColor_picker: "#FFFFFF",
-			innermostBackgroundColor_picker: "#FFFFFF",
-			innermostTextColor_picker: "#000000",
-			optionHideWeekday_option: false,
-			optionHideMonth_option: false,
-			optionHideDate_option: false,
-			optionHideBattery_option: false,
-			optionHideConnectionLost_option: false,
-			complicationMonthColor_picker: "#555555",
-			complicationDateColor_picker: "#555555",
-			complicationDayColor_picker: "#555555",
 			complicationBatteryColor_picker: "#555555",
 			complicationBatteryErrorColor_picker: "#AA0000",
-			optionDemoMode_option: false,
-			optionCustomArcColors_option: false,
-			elapsedOuterColor_picker: "#AA0000",
+			complicationDateColor_picker: "#555555",
+			complicationDayColor_picker: "#555555",
+			complicationMonthColor_picker: "#555555",
+			elapsedBackground_picker: "#AAAAAA",
+			elapsedInnerBackground_picker: "#AAAAAA",
 			elapsedInnerColor_picker: "#0000FF",
 			elapsedOuterBackground_picker: "#AAAAAA",
-			elapsedInnerBackground_picker: "#AAAAAA",
+			elapsedOuterColor_picker: "#AA0000",
+			hourHandColor_picker: "#0000FF",
+			innermostBackgroundColor_picker: "#FFFFFF",
+			innermostTextColor_picker: "#000000",
+			language_picker: 0,
+			minuteHandColor_picker: "#AA0000",
+			option12HourTime_option: false,
+			optionCustomArcColors_option: false,
+			optionDateLeadingZeroSuppression_option: false,
+			optionDemoMode_option: false,
+			optionHideBattery_option: false,
+			optionHideConnectionLost_option: false,
+			optionHideDate_option: false,
+			optionHideDigitalTime_option: false,
+			optionHideMonth_option: false,
+			optionHideWeekday_option: false,
+			optionHourHandSnap_option: false,
+			optionHourLeadingZeroSuppression_option: false,
+			optionVibrateOnDisconnection_option: false,
+			outerBackgroundColor_picker: "#FFFFFF",
+			showBatteryLevel: 20,
 		};
 
 		Object.keys(defaults).forEach(function(k){localStorage[k] = defaults[k];});
