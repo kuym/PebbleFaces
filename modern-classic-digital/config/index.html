@@ -352,6 +352,7 @@
 		var return_to = getQueryParam("return_to", "pebblejs://close#");
 		document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
 	});
+
 	$(".reset-button").click(function()
 	{
 		console.log("Reset");
@@ -370,10 +371,12 @@
 			elapsedOuterBackground_picker: "#AAAAAA",
 			elapsedOuterColor_picker: "#AA0000",
 			hourHandColor_picker: "#0000FF",
+			hourHandWidth_value: 7,
 			innermostBackgroundColor_picker: "#FFFFFF",
 			innermostTextColor_picker: "#000000",
 			language_picker: 0,
 			minuteHandColor_picker: "#AA0000",
+			minuteHandWidth_value: 3,
 			option12HourTime_option: false,
 			optionCustomArcColors_option: false,
 			optionDateLeadingZeroSuppression_option: false,
